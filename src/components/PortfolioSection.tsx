@@ -13,32 +13,27 @@ interface PortfolioItem {
   category: "games" | "art" | "music";
   image: string;
   tags: string[];
+  url: string; // <---- ADDED
 }
 
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Neon Horizon",
-    description: "A cyberpunk-themed action platformer with dynamic combat and synthwave aesthetics.",
+    title: "The Maze Killer",
+    description: "Teleport, explode, and get lost in endless mazes—good luck finding your way out!",
     category: "games",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
     tags: ["Godot", "GDScript", "2D Platformer"],
+    url: "https://jackubs.github.io/yaakoubi/", // <--- PUT YOUR LINK HERE
   },
   {
     id: 2,
-    title: "Echo Chamber",
-    description: "A puzzle game where sound waves reveal hidden paths and unlock mysteries.",
+    title: "Blank Out",
+    description: "Your Eyes Are the Controller 👁️",
     category: "games",
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80",
-    tags: ["Unity", "C#", "Puzzle"],
-  },
-  {
-    id: 3,
-    title: "Dreamscape Visuals",
-    description: "Concept art and visual designs for immersive game environments.",
-    category: "art",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339bbe3c86?w=600&q=80",
-    tags: ["Concept Art", "Environment", "Digital"],
+    tags: ["Godot", "GDScript", "Puzzle"],
+    url: "https://jackubs.github.io/yaakoubi/", // <--- YOUR LINK
   },
   {
     id: 4,
@@ -47,6 +42,7 @@ const portfolioItems: PortfolioItem[] = [
     category: "art",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
     tags: ["UI/UX", "Game UI", "Design"],
+    url: "https://jackubs.github.io/yaakoubi/", // <--- YOUR LINK
   },
   {
     id: 5,
@@ -55,6 +51,7 @@ const portfolioItems: PortfolioItem[] = [
     category: "music",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
     tags: ["Guitar", "Piano", "Electronic"],
+    url: "https://www.youtube.com/@jacob.8384", // <--- MUSIC LINK
   },
   {
     id: 6,
@@ -63,6 +60,7 @@ const portfolioItems: PortfolioItem[] = [
     category: "music",
     image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
     tags: ["OST", "Ambient", "Orchestral"],
+    url: "https://www.youtube.com/@jacob.8384", // <--- MUSIC LINK
   },
 ];
 
@@ -78,9 +76,10 @@ export const PortfolioSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
-  const filteredItems = activeCategory === "all"
-    ? portfolioItems
-    : portfolioItems.filter((item) => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-card/30" ref={ref}>
@@ -117,10 +116,7 @@ export const PortfolioSection = () => {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <motion.div
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -139,21 +135,15 @@ export const PortfolioSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
-                
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                    item.category === "games" ? "bg-primary/20 text-primary" :
-                    item.category === "art" ? "bg-accent/20 text-accent" :
-                    "bg-skill-music/20 text-skill-music"
-                  }`}>
-                    {item.category.charAt(0).toUpperCase() + item.category.slice(1)}
-                  </span>
-                </div>
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="hero" size="sm" className="gap-2">
+                  <Button
+                    variant="hero"
+                    size="sm"
+                    className="gap-2"
+                    onClick={() => window.open(item.url, "_blank")}
+                  >
                     {item.category === "music" ? <Play size={16} /> : <ExternalLink size={16} />}
                     {item.category === "music" ? "Listen" : "View Project"}
                   </Button>

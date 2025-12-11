@@ -59,7 +59,7 @@ export const AboutSection = () => {
                 <p className="text-lg text-foreground leading-relaxed">
                   I am Yaakoubi Youssef an <span className="text-primary font-semibold">indie game developer</span> passionate 
                   about creating original gameplay, unique mechanics, and immersive experiences. I work 
-                  with <span className="text-accent font-semibold">GDScript, C++</span>, and multiple game engines.
+                  with <span className="text-accent font-semibold">GDScript, C++ , Python</span>, and multiple game engines.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Beyond coding, I design visuals, compose original melodies, and create full soundtracks 
