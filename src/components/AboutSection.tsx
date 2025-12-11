@@ -57,7 +57,7 @@ export const AboutSection = () => {
               <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-skill-music rounded-full" />
               <div className="pl-6 space-y-4">
                 <p className="text-lg text-foreground leading-relaxed">
-                  I am an <span className="text-primary font-semibold">indie game developer</span> passionate 
+                  I am Yaakoubi Youssef an <span className="text-primary font-semibold">indie game developer</span> passionate 
                   about creating original gameplay, unique mechanics, and immersive experiences. I work 
                   with <span className="text-accent font-semibold">GDScript, C++</span>, and multiple game engines.
                 </p>
