@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/500.css";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+
+@layer base {
+  :root {
+    /* Dark futuristic theme */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyan/Teal accent for tech vibe */
+    --primary: 187 100% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 280 80% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --glow-primary: 187 100% 50%;
+    --glow-accent: 280 80% 60%;
+    --gradient-start: 222 47% 6%;
+    --gradient-end: 222 47% 12%;
+    
+    /* Skill colors */
+    --skill-code: 187 100% 50%;
+    --skill-design: 280 80% 60%;
+    --skill-music: 340 80% 60%;
+    --skill-other: 45 100% 60%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 187 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 280 80% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-2;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg mb-12;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3),
+                0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.3),
+                0 0 40px hsl(var(--glow-accent) / 0.1);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-primary/50 hover:-translate-y-1;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 10px 40px hsl(var(--primary) / 0.1),
+                0 0 20px hsl(var(--primary) / 0.05);
+  }
+
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .skill-bar {
+    @apply h-2 rounded-full overflow-hidden bg-muted;
+  }
+
+  .skill-bar-fill {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+  }
+
+  .timeline-line {
+    @apply absolute left-4 top-10 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent;
+  }
+
+  .timeline-dot {
+    @apply absolute left-2.5 w-3 h-3 rounded-full bg-primary glow-primary;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-radial-gradient {
+    background: radial-gradient(ellipse at center top, hsl(var(--primary) / 0.1) 0%, transparent 50%);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
