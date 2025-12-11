@@ -51,7 +51,7 @@ const portfolioItems: PortfolioItem[] = [
     category: "music",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
     tags: ["Guitar", "Piano", "Electronic"],
-    url: "https://www.youtube.com/@jacob.8384", // <--- MUSIC LINK
+    url: "https://www.instagram.com/jawna_behiiii/", // <--- MUSIC LINK
   },
   {
     id: 6,
