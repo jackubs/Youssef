@@ -24,7 +24,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "The Maze Killer",
     description: "Teleport, explode, and get lost in endless mazes—good luck finding your way out!",
     category: "games",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
+    image: "/image/3.png",
     tags: ["Godot", "GDScript", "2D Platformer"],
     url: "https://jackubs.github.io/yaakoubi/", // <--- PUT YOUR LINK HERE
   },
@@ -42,7 +42,7 @@ const portfolioItems: PortfolioItem[] = [
   title: "Gameplay & Video Edits",
   description: "I create short gameplay videos and edit them with custom montages as a hobby I truly enjoy.",
   category: "art",
-  image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+  image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
   tags: ["Gameplay", "Editing", "Montage"],
   url:"https://www.instagram.com/reel/DP67PiUjBrO/", // <--- YOUR LINK
  },
