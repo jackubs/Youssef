@@ -31,7 +31,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Blink Out",
     description: "Your Eyes Are the Controller 👁️",
     category: "games",
-    image: "src/jackubs logo.png",
+    image: "image/jackubs-logo.png",
     tags: ["Godot", "GDScript", "Puzzle"],
     url: "https://jackubs.github.io/yaakoubi/", // <--- YOUR LINK
   },
@@ -50,7 +50,7 @@ const portfolioItems: PortfolioItem[] = [
     title: " My Band ",
     description: "An original soundtrack featuring ambient electronic and acoustic compositions.",
     category: "music",
-    image: "src/band.jpg",
+    image: "image/band.jpg",
     tags: ["Guitar", "Piano", "Electronic"],
     url: "https://www.instagram.com/jawna_behiiii/", // <--- MUSIC LINK
   },
