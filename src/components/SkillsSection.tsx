@@ -57,12 +57,23 @@ const skillCategories: SkillCategory[] = [
     icon: Users,
     color: "skill-other",
     skills: [
-      { name: "Team Collaboration", level: 85, category: "other" },
-      { name: "Communication", level: 90, category: "other" },
-      { name: "Problem Solving", level: 85, category: "other" },
-      { name: "Project Management", level: 70, category: "other" },
+      { name: "Team Collaboration", level: 85, category: "music" },
+      { name: "Communication", level: 90, category: "music" },
+      { name: "Problem Solving", level: 85, category: "music" },
+      { name: "Project Management", level: 70, category: "music" },
     ],
   },
+  {
+    title: "Hobbies",
+    icon: Users,
+    color: "skill-code",
+    skills: [
+      { name: "Writing Books", level: 90, category: "other" },
+      { name: "Playing Chess", level: 85, category: "other" },
+    ],
+  },
+
+
 ];
 
 const SkillBar = ({ skill, delay, color }: { skill: Skill; delay: number; color: string }) => {

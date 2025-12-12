@@ -28,28 +28,29 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 2,
-    title: "Blank Out",
+    title: "Blink Out",
     description: "Your Eyes Are the Controller 👁️",
     category: "games",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80",
+    image: "public/jackubs logo.png",
     tags: ["Godot", "GDScript", "Puzzle"],
     url: "https://jackubs.github.io/yaakoubi/", // <--- YOUR LINK
   },
   {
-    id: 4,
-    title: "UI Design Collection",
-    description: "Modern and intuitive user interface designs for games and applications.",
-    category: "art",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
-    tags: ["UI/UX", "Game UI", "Design"],
-    url: "https://jackubs.github.io/yaakoubi/", // <--- YOUR LINK
-  },
+  id: 4,
+  title: "Gameplay & Video Edits",
+  description: "I create short gameplay videos and edit them with custom montages as a hobby I truly enjoy.",
+  category: "art",
+  image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+  tags: ["Gameplay", "Editing", "Montage"],
+  url:"https://www.instagram.com/reel/DP67PiUjBrO/", // <--- YOUR LINK
+ },
+
   {
     id: 5,
     title: " My Band ",
     description: "An original soundtrack featuring ambient electronic and acoustic compositions.",
     category: "music",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
+    image: "public/band.jpg",
     tags: ["Guitar", "Piano", "Electronic"],
     url: "https://www.instagram.com/jawna_behiiii/", // <--- MUSIC LINK
   },
