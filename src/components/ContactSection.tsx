@@ -7,12 +7,30 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import { FaTelegramPlane, FaFacebook, FaWhatsapp } from "react-icons/fa";
+
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "#", color: "hover:text-foreground" },
-  { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-primary" },
-  { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-primary" },
+  {
+    name: "Telegram",
+    icon: FaTelegramPlane,
+    href: "https://t.me/yourusername",
+    color: "hover:text-blue-400"
+  },
+  {
+    name: "Facebook",
+    icon: FaFacebook,
+    href: "https://www.facebook.com/youssef.yaacoubi.571152",
+    color: "hover:text-blue-600"
+  },
+  {
+    name: "WhatsApp",
+    icon: FaWhatsapp,
+    href: "https://wa.me/21697780013",
+    color: "hover:text-green-500"
+  }
 ];
+
 
 export const ContactSection = () => {
   const ref = useRef(null);

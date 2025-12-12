@@ -17,7 +17,7 @@ const experiences: Experience[] = [
   {
     id: 1,
     title: "Indie Game Developer",
-    period: "2020 - Present",
+    period: "2022 - Present",
     description: "Creating original games and interactive experiences from concept to completion.",
     icon: Gamepad2,
     highlights: [
@@ -30,8 +30,9 @@ const experiences: Experience[] = [
   {
     id: 2,
     title: "Music Band Leader",
-    period: "2019 - 2022",
-    description: "Founded and led a music band, handling creative direction and composition.",
+    period: "2020 - 2024",
+    description: "Led a music band, overseeing creative direction, composition, and performances, with key activities at Université Privée – Univ Europ Tunis.",
+
     icon: Music,
     highlights: [
       "Composed original music and wrote lyrics",
@@ -67,6 +68,21 @@ const experiences: Experience[] = [
       "Built network of creative professionals",
     ],
   },
+ {
+  id: 3,
+  title: "Technical Service Agent",
+  period: "Work Experience",
+  company: "Tunisie Telecom",
+  description: "Internship in customer service and telecommunications support.",
+  icon: Users,
+  highlights: [
+    "Handled customer inquiries and support",
+    "Learned telecom operations and processes",
+    "Developed strong communication skills",
+    "Worked in a fast-paced environment"
+  ]
+}
+
 ];
 
 export const ExperienceSection = () => {

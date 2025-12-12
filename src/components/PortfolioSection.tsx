@@ -46,7 +46,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 5,
-    title: "Midnight Echoes EP",
+    title: " My Band ",
     description: "An original soundtrack featuring ambient electronic and acoustic compositions.",
     category: "music",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
