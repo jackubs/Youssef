@@ -4,7 +4,7 @@ import { FileText, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 
-const CV_URL = "public/cvcv/Youssef Yaakoubi EN.pdf";
+const CV_URL = "/cvcv/Youssef Yaakoubi EN.pdf";
 
 export const CVSection = () => {
   const ref = useRef(null);
