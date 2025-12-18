@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FileText, Download, Eye, FileDown } from "lucide-react";
+import { FileText, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+
+const CV_URL = "public/cvcv/Youssef Yaakoubi EN.pdf";
 
 export const CVSection = () => {
   const ref = useRef(null);
@@ -12,9 +13,15 @@ export const CVSection = () => {
   const handleDownload = () => {
     toast({
       title: "CV Download",
-      description: "Your CV download will start shortly. Thank you for your interest!",
+      description: "Your CV download will start shortly.",
     });
-    // In a real implementation, this would trigger the actual download
+
+    const link = document.createElement("a");
+    link.href = CV_URL;
+    link.download = "Youssef_Yaakoubi_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -27,11 +34,13 @@ export const CVSection = () => {
           className="max-w-3xl mx-auto"
         >
           <div className="relative p-8 md:p-12 rounded-2xl bg-gradient-to-br from-card to-secondary/30 border border-border overflow-hidden">
+            
             {/* Background Decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
 
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+              
               {/* Icon */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -48,12 +57,14 @@ export const CVSection = () => {
                   Download My CV
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Get a comprehensive overview of my skills, experience, and qualifications. 
+                  Get a comprehensive overview of my skills, experience, and qualifications.
                   Available in PDF format for easy viewing and sharing.
                 </p>
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                  
+                  {/* Download */}
                   <Button
                     variant="hero"
                     size="lg"
@@ -63,15 +74,24 @@ export const CVSection = () => {
                     <Download className="w-5 h-5" />
                     Download CV
                   </Button>
+
+                  {/* View Online */}
                   <Button
+                    asChild
                     variant="heroOutline"
                     size="lg"
                     className="gap-2 w-full sm:w-auto"
-                    onClick={handleDownload}
                   >
-                    <Eye className="w-5 h-5" />
-                    View Online
+                    <a
+                      href={CV_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Eye className="w-5 h-5" />
+                      View Online
+                    </a>
                   </Button>
+
                 </div>
               </div>
             </div>
@@ -89,16 +109,19 @@ export const CVSection = () => {
                   { value: "10+", label: "Projects" },
                   { value: "5", label: "Languages" },
                   { value: "∞", label: "Passion" },
-                ].map((stat, index) => (
+                ].map((stat) => (
                   <div key={stat.label}>
                     <div className="font-display text-2xl md:text-3xl font-bold text-primary">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
             </motion.div>
+
           </div>
         </motion.div>
       </div>
