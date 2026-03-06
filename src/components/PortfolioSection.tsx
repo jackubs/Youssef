@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 
 
 
-type Category = "all" | "games" | "art" | "music";
+type Category = "all" | "games" | "art" | "music" | "Application";
 
 interface PortfolioItem {
   id: number;
   title: string;
   description: string;
-  category: "games" | "art" | "music";
+  category: "games" | "art" | "music"| "Application";
   image: string;
   tags: string[];
   url: string; // <---- ADDED
