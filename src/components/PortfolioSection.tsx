@@ -21,12 +21,12 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "The Maze Killer",
-    description: "Teleport, explode, and get lost in endless mazes—good luck finding your way out!",
-    category: "games",
-    image: "/image/3.png",
-    tags: ["Godot", "GDScript", "2D Platformer"],
-    url: "https://jackubs.github.io/yaakoubi/", // <--- PUT YOUR LINK HERE
+    title: "Mesh",
+    description: "Send messages without internet using a secure peer-to-peer mesh network.",
+    category: "Application",
+    image: "/image/Meshh.png",
+    tags: ["React", "Vite"],
+    url: "https://mesh-omega.vercel.app/", // <--- PUT YOUR LINK HERE
   },
   {
     id: 2,
